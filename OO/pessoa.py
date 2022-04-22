@@ -8,12 +8,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Ola Mundo {id(self)}'
 
+class Homen(Pessoa):
+    pass
 
 
 
 if __name__ == '__main__':
-    david = Pessoa(nome='david')
-    luciano = Pessoa(david, nome='Luciano')
+    david = Homen(nome='david')
+    luciano = Homen(david, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
     print(luciano.cumprimentar())
@@ -32,4 +34,10 @@ if __name__ == '__main__':
     print(luciano.olhos)
     print(david.olhos)
     print(id(Pessoa.olhos), id(luciano.olhos), id(david.olhos))
+    pessoa = Pessoa ('Aninomo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homen))
+    print(isinstance(david, Pessoa))
+    print(isinstance(david, Homen))
+
 
